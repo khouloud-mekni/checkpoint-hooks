@@ -2,6 +2,8 @@ import React from 'react'
 import './CardMovie.css'
 
 import ReactStars from 'react-stars'
+import { Button } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 const Cardmovie = ({movie}) => {
   
   return (
@@ -12,12 +14,14 @@ const Cardmovie = ({movie}) => {
    <ReactStars 
    value={movie.rating}
    half={false}
-count={5}
+   count={5}
    size={24}
    edit={false}
     />
    </div>
-   <p className="card-desc"> {movie.description}</p>
+   <Link to={`/details/${movie.id}`}> <Button variant='warning'>
+   View More
+   </Button></Link>
    <h2 className="card-title">{movie.title}</h2>
    
    </div>
@@ -30,68 +34,3 @@ count={5}
 }
 
 export default Cardmovie
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-// import './CardMovie.css'
-// import StarsRating from 'stars-rating'
-// const Cardmovie = ({movie}) => {
-//   return (
-//     <div className='oneCard'>
-//     <h7>{movie.title}</h7>
-//     <img src={movie.posterUrl} alt="imghk" width={170}/>
-// <p>{movie.description}</p>
-// <StarsRating
-//         count={5}
-//         // onChange={ratingChanged}
-//         half={false}
-//         size={25}
-//         color2={'#ffd700'} 
-//         edit={false}/>
-
-//     </div>
-//   )
-// }
-
-// export default Cardmovie
